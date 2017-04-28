@@ -1,7 +1,3 @@
-# coding: utf8
-
-from math import sqrt
-
 critics = {
 	'Lisa Rose': {
 		'Lady in the Water': 2.5,
