@@ -21,17 +21,11 @@ critics = {
 	}
 }
 
-def sim_distance(prefs, person1, person2):
-  si = {}
-  for item in prefs[person1]:
-    for item in prefs[person2]:
-      si[item] = 1
+def sim_distance(items, person1, person2):
+    general_items = [item for item in items[person1] if item in items[person2]]
 
-    if (len(si) == 0):
-      return 0
+    if 0 == len(general_items):
+        return 0
 
-    sum_of_squares = sum([pow(prefs[person1][item]-prefs[person2][item], 2)
-    	for item in prefs[person1] if item in prefs[person2]])
-
-  return 1/(1 + sum_of_squares)
+    return 1/(1 + sum([pow(items[person1][item] - items[person2][item], 2) for item in general_items]))
 
