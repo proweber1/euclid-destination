@@ -11,7 +11,7 @@ public class Critics {
     /**
      * This class encapsulates the algorithm for estimating the Euclidean distance
      */
-    class EuclidDestination {
+    private static class EuclidDestination {
         private final Map<String, Map<String, Double>> prefs;
         private final String person1;
         private final String person2;
@@ -63,7 +63,7 @@ public class Critics {
     public static void main(String[] args) {
         Map<String, Map<String, Double>> critics = DataSet.CRITICS;
 
-        final Critics.EuclidDestination calc = new Critics().new EuclidDestination(critics, "Lisa Rose", "Gene Seymour");
+        final EuclidDestination calc = new EuclidDestination(critics, "Lisa Rose", "Gene Seymour");
         double calcResult = calc.simDistance();
 
         System.out.println(calcResult);
